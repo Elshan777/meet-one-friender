@@ -1,6 +1,8 @@
 # Tes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
+first run npm install on this folder project
+after that run npm start
 
 ## Development server
 
