@@ -1,6 +1,7 @@
 package elte.meetonefriender.person;
 
-import org.apache.coyote.Response;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,5 +49,19 @@ public class PersonController {
         return new ResponseEntity<>("Person deleted successfully", HttpStatus.OK);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<String> checkLogin(@RequestBody String json ) throws JSONException {
+        JSONObject jsonObj=new JSONObject(json);
+
+        String username = jsonObj.getString("username");
+        String password = jsonObj.getString("password");
+
+        if (personService.checkLogin(username, password)) {
+            return new ResponseEntity<>("Login Successful", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Invalid credentials", HttpStatus.FORBIDDEN);
+        }
+
+    }
 
 }

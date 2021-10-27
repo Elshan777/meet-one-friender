@@ -37,11 +37,11 @@ public class ExampleConfig {
 
             List<Person> personList = new ArrayList<>();
             personList.add(new Person("Jake", "Johnson", "jjohnson",
-                    "12345as", dateformat.parse("01/01/1990"), Gender.MALE, "London"));
+                    "12345as", dateformat.parse("01/01/1990"),  "London"));
             personList.add(new Person("Tony", "Soprano", "tsoprano",
-                    "12345as", dateformat.parse("01/01/1990"), Gender.MALE, "New Jersey"));
+                    "12345as", dateformat.parse("01/01/1990"), "New Jersey"));
             personList.add(new Person("Jane", "Steele", "jsteele",
-                    "12345as", dateformat.parse("01/01/1990"), Gender.FEMALE, "Manchester"));
+                    "12345as", dateformat.parse("01/01/1990"), "Manchester"));
             personRepository.saveAll(personList);
         };
     }

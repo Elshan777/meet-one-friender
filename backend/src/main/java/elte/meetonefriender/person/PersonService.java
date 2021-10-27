@@ -45,4 +45,17 @@ public class PersonService {
                 .map(tran -> personRepository.save(person))
                 .orElseThrow(() -> new IllegalStateException("the person you want to update does not exist"));
     }
+
+    public boolean checkLogin(String username, String password) {
+        Person person = personRepository.findAll()
+                .stream()
+                .filter( p -> p.getUsername().equals(username) )
+                .findFirst()
+                .orElse(null);
+        if (person != null) {
+            return person.getPassword().equals(password);
+        }
+        return false;
+
+    }
 }

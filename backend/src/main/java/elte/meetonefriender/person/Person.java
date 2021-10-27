@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table
-public class Person {
+public class    Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,27 +16,27 @@ public class Person {
     private String password;
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
-    private Gender gender;
+//    private Gender gender;
     private String cityName;
 
 
     public Person() {
     }
 
-    public Person(
+    public  Person(
             String firstName,
             String lastName,
             String username,
             String password,
             Date dateOfBirth,
-            Gender gender,
+//            Gender gender,
             String cityName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
         this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
+//        this.gender = gender;
         this.cityName = cityName;
     }
 
@@ -89,13 +89,13 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
+//    public Gender getGender() {
+//        return gender;
+//    }
+//
+//    public void setGender(Gender gender) {
+//        this.gender = gender;
+//    }
 
     public String getCityName() {
         return cityName;
@@ -114,7 +114,7 @@ public class Person {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
-                ", gender=" + gender +
+//                ", gender=" + gender +
                 ", cityName='" + cityName + '\'' +
                 '}';
     }
