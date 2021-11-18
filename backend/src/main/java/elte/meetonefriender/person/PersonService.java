@@ -56,6 +56,5 @@ public class PersonService {
             return person.getPassword().equals(password);
         }
         return false;
-
     }
 }
