@@ -13,6 +13,7 @@ public class    Person {
     private String firstName;
     private String lastName;
     private String username;
+    private String email;
     private String password;
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
@@ -40,6 +41,23 @@ public class    Person {
         this.cityName = cityName;
     }
 
+    public Person(Long id,
+                  String firstName,
+                  String lastName,
+                  String username,
+                  String email,
+                  String password,
+                  Date dateOfBirth,
+                  String cityName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.dateOfBirth = dateOfBirth;
+        this.cityName = cityName;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -71,6 +89,14 @@ public class    Person {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -112,9 +138,9 @@ public class    Person {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
-//                ", gender=" + gender +
                 ", cityName='" + cityName + '\'' +
                 '}';
     }
